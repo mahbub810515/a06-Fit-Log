@@ -1,6 +1,11 @@
 
-
-const Library = () => {
+const getData=async()=>{
+    const res =await fetch('https://api.abcz.workers.dev/api/fitlog');
+    return res.json();
+}
+const Library = async() => {
+    const workoutsData =await getData();
+    console.log(workoutsData)
   return (
     <div className="container mx-auto">
         <div>

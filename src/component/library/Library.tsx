@@ -1,3 +1,5 @@
+import { WorkoutType } from "@/types/WorkoutType";
+import WorkoutsCard from "./WorkoutsCard";
 
 const getData=async()=>{
     const res =await fetch('https://api.abcz.workers.dev/api/fitlog');
@@ -11,6 +13,9 @@ const Library = async() => {
         <div>
             <h1 className="font-extrabold text-2xl text-white">THE LIBRARY</h1>
             <p className="font-normal text-[14px] text-gray-400">Twelve lifts covering every major muscle group.</p>
+        </div>
+        <div className="grid grid-cols-4 gap-10 my-8">
+            {workoutsData.map((workout:WorkoutType)=><WorkoutsCard key={workout.id} workout={workout}/>)}
         </div>
     </div>
   )

@@ -7,7 +7,7 @@ type WorkoutsCardProps = {
 
 const WorkoutsCard = ({ workout }: WorkoutsCardProps) => {
   return (
-    <div className="card bg-base-100 w-96 overflow-hidden border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+    <div className="card bg-base-100 overflow-hidden border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <figure className="relative h-64 overflow-hidden">
         <img
           src={workout.image}
@@ -16,7 +16,7 @@ const WorkoutsCard = ({ workout }: WorkoutsCardProps) => {
         />
 
         {/* Image overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
         {/* Difficulty */}
         <div className="absolute right-4 top-4">

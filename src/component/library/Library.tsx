@@ -7,14 +7,14 @@ const getData=async()=>{
 }
 const Library = async() => {
     const workoutsData =await getData();
-    console.log(workoutsData)
+    
   return (
     <div className="container mx-auto">
         <div>
             <h1 className="font-extrabold text-2xl text-white">THE LIBRARY</h1>
             <p className="font-normal text-[14px] text-gray-400">Twelve lifts covering every major muscle group.</p>
         </div>
-        <div className="grid grid-cols-4 gap-10 my-8">
+        <div className="grid grid-cols-3 gap-10 my-8">
             {workoutsData.map((workout:WorkoutType)=><WorkoutsCard key={workout.id} workout={workout}/>)}
         </div>
     </div>

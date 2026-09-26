@@ -1,4 +1,5 @@
 import { WorkoutType } from "@/types/WorkoutType";
+import Link from "next/link";
 
 
 type WorkoutsCardProps = {
@@ -7,7 +8,8 @@ type WorkoutsCardProps = {
 
 const WorkoutsCard = ({ workout }: WorkoutsCardProps) => {
   return (
-    <div className="card bg-base-100 overflow-hidden border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+    <Link href={`workout/${workout.id}`}
+      className="card bg-base-100 overflow-hidden border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <figure className="relative h-64 overflow-hidden">
         <img
           src={workout.image}
@@ -21,13 +23,12 @@ const WorkoutsCard = ({ workout }: WorkoutsCardProps) => {
         {/* Difficulty */}
         <div className="absolute right-4 top-4">
           <div
-            className={`badge border-0 px-3 py-3 font-semibold text-white shadow-lg ${
-              workout.difficulty === "Beginner"
+            className={`badge border-0 px-3 py-3 font-semibold text-white shadow-lg ${workout.difficulty === "Beginner"
                 ? "bg-green-500/90"
                 : workout.difficulty === "Intermediate"
                   ? "bg-orange-500/90"
                   : "bg-red-500/90"
-            }`}
+              }`}
           >
             {workout.difficulty}
           </div>
@@ -94,7 +95,7 @@ const WorkoutsCard = ({ workout }: WorkoutsCardProps) => {
           <span className="text-xs font-medium">{workout.equipment}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

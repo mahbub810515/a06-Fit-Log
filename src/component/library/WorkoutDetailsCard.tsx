@@ -1,5 +1,6 @@
 
 import { WorkoutType } from "@/types/WorkoutType";
+import AaddTodayPlan from "../button/AaddTodayPlan";
 
 type WorkoutDetailsCardProps = {
   workout: WorkoutType;
@@ -148,9 +149,7 @@ const WorkoutDetailCard = ({ workout }: WorkoutDetailsCardProps) => {
 
         {/* Button */}
         <div className="card-actions mt-5 justify-end">
-          <button className="btn btn-primary rounded-xl px-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
-            Add to today's plan
-          </button>
+          <AaddTodayPlan workout={workout}/>
           <button className="btn btn-primary rounded-xl px-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
             save for later
           </button>

@@ -3,7 +3,7 @@ import logo from '@/assets/logo.png'
 
 const Footer = () => {
     return (
-        <div className='bg-slate-900  py-16'>
+        <div className='bg-slate-900'>
 
         <footer className="container mx-auto footer sm:footer-horizontal text-neutral-content items-center p-4">
             <aside className="grid-flow-col items-center">

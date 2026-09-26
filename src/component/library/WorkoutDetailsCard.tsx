@@ -149,7 +149,10 @@ const WorkoutDetailCard = ({ workout }: WorkoutDetailsCardProps) => {
         {/* Button */}
         <div className="card-actions mt-5 justify-end">
           <button className="btn btn-primary rounded-xl px-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
-            Start Workout
+            Add to today's plan
+          </button>
+          <button className="btn btn-primary rounded-xl px-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            save for later
           </button>
         </div>
 

@@ -4,7 +4,7 @@ import { WorkoutType } from '@/types/WorkoutType'
 import React from 'react'
 import { toast } from 'react-toastify'
 
-const AaddTodayPlan = ({ workout }: { workout: WorkoutType }) => {
+const AddTodayPlan = ({ workout }: { workout: WorkoutType }) => {
     const context = useWorkout();
     const { todayPlan, addToTodayPlan } = context;
     const handleAddTodayPlan = () => {
@@ -19,4 +19,4 @@ const AaddTodayPlan = ({ workout }: { workout: WorkoutType }) => {
     )
 }
 
-export default AaddTodayPlan
+export default AddTodayPlan

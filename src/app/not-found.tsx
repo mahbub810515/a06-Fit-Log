@@ -25,7 +25,7 @@ export default function NotFound() {
           </Link>
 
           <Link
-            href="/workouts"
+            href="/workout"
             className="btn btn-outline"
           >
             <FaSearch />

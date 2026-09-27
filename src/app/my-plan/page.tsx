@@ -101,7 +101,7 @@ const MyPlan = () => {
         </div>
 
         {/* Workout Tabs */}
-        <div className="rounded-2xl border border-base-300 bg-base-100 p-2 shadow-sm">
+        <div className="flex rounded-2xl border border-base-300 bg-base-100 p-2 shadow-sm">
           
           <div className="tabs tabs-box">
 

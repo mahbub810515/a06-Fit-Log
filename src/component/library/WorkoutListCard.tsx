@@ -16,7 +16,7 @@ const WorkoutListCard = ({ workout }: WorkoutsCardProps) => {
     return (
         <div className='m-2 '>
             <ul className="list bg-base-100 rounded-box shadow-md">
-                <li className="list-row">
+                <li  className="list-row flex flex-col md:flex-row md:items-center gap-4">
                     <div><img className="size-25 rounded-box" alt={workout.name} src={workout.image} /></div>
                     <div>
                         <div className='font-bold text-2xl'>{workout.name}</div>
@@ -33,7 +33,7 @@ const WorkoutListCard = ({ workout }: WorkoutsCardProps) => {
                             </h2>
                         </div>
                     </div>
-                    <div className='flex gap-2 items-center'>
+                    <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center w-full sm:w-auto">
                         <Link href={`workout/${workout.id}`} className="btn btn-success" >
                             View Details
                         </Link>

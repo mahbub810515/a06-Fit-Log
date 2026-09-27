@@ -13,7 +13,7 @@ type WorkoutContextType = {
   removeFromTodayPlan: (id: number) => void;
 
   saveForLater: (workout: WorkoutType) => void;
-  removeFromSaved: (id: number) => void;
+  removeFromSavedWorkouts: (id: number) => void;
 
   isInTodayPlan: (id: number) => boolean;
   isSaved: (id: number) => boolean;
@@ -57,7 +57,7 @@ const WorkoutProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Remove from saved workouts
-  const removeFromSaved = (id: number) => {
+  const removeFromSavedWorkouts = (id: number) => {
     setSavedWorkouts((prev) =>
       prev.filter((workout) => workout.id !== id)
     );
@@ -83,7 +83,7 @@ const WorkoutProvider = ({ children }: { children: ReactNode }) => {
         removeFromTodayPlan,
 
         saveForLater,
-        removeFromSaved,
+        removeFromSavedWorkouts,
 
         isInTodayPlan,
         isSaved,

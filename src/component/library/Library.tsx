@@ -2,7 +2,7 @@ import { WorkoutType } from "@/types/WorkoutType";
 import WorkoutsCard from "./WorkoutsCard";
 
 const getData=async()=>{
-    const res =await fetch('https://api.abcz.workers.dev/api/fitlog');
+    const res =await fetch('https://api.abcz.workers.dev/api/fitlog');    
     return res.json();
 }
 const Library = async() => {

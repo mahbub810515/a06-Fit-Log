@@ -1,13 +1,16 @@
 'use client'
 import WorkoutListCard from '@/component/library/WorkoutListCard';
 import { useWorkout } from '@/context/WorkoutContext'
+import { WorkoutType } from '@/types/WorkoutType';
+import { useState } from 'react';
 import { FaBookmark, FaCalendarCheck, FaClock, FaDumbbell, FaFire } from 'react-icons/fa';
 
 
 const MyPlan = () => {
-    const context=useWorkout();
-    const {todayPlan,savedWorkouts,}=context;
-    return (        
+  const context = useWorkout();
+  const { todayPlan, savedWorkouts, } = context;
+  const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
+  return (
     <div className="container mx-auto max-w-6xl px-4 py-8">
 
       {/* Header */}
@@ -42,7 +45,7 @@ const MyPlan = () => {
               Minutes
             </p>
             <h2 className="text-2xl font-bold">
-              30
+              {activeTab === "today" ? todayPlan.reduce((total:number, workout:WorkoutType) => total + workout.duration, 0) : savedWorkouts.reduce((total:number, workout:WorkoutType) => total + workout.duration, 0)}
             </h2>
           </div>
         </div>
@@ -58,7 +61,7 @@ const MyPlan = () => {
               Calories
             </p>
             <h2 className="text-2xl font-bold">
-              160
+              {activeTab === "today" ? todayPlan.reduce((total:number, workout:WorkoutType) => total + workout.caloriesBurned, 0) : savedWorkouts.reduce((total:number, workout:WorkoutType) => total + workout.caloriesBurned, 0)}
             </h2>
           </div>
         </div>
@@ -74,7 +77,7 @@ const MyPlan = () => {
               Exercises
             </p>
             <h2 className="text-2xl font-bold">
-              {todayPlan.length}
+              {activeTab === "today" ? todayPlan.length : savedWorkouts.length}
             </h2>
           </div>
         </div>
@@ -91,8 +94,9 @@ const MyPlan = () => {
             type="radio"
             name="my_plan_tabs"
             className="tab"
-            aria-label="Today's Plan"
-            defaultChecked
+            aria-label="Today's Plan"            
+            checked={activeTab === "today"}
+            onChange={() => setActiveTab("today")}
           />
 
           <div className="tab-content p-5 sm:p-6">
@@ -113,12 +117,12 @@ const MyPlan = () => {
               </div>
 
               <span className="badge badge-primary">
-                {todayPlan.length} Exercises
+                {activeTab === "today" ? todayPlan.length : savedWorkouts.length} Exercises
               </span>
             </div>
 
             {/* Workout List */}
-            {todayPlan.length > 0 ? (
+            {todayPlan.length > 0 || savedWorkouts.length > 0 ? (
               <div className="space-y-4">
                 {todayPlan.map((workout) => (
                   <WorkoutListCard
@@ -148,6 +152,8 @@ const MyPlan = () => {
             name="my_plan_tabs"
             className="tab"
             aria-label="Saved"
+            checked={activeTab === "saved"}
+            onChange={() => setActiveTab("saved")}
           />
 
           <div className="tab-content p-5 sm:p-6">
@@ -195,8 +201,8 @@ const MyPlan = () => {
       </div>
 
     </div>
-  
-    );
+
+  );
 }
 
 export default MyPlan

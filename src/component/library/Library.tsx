@@ -9,7 +9,7 @@ const Library = async() => {
     const workoutsData =await getData();
     
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-slate-900 py-20 px-10">
         <div>
             <h1 className="font-extrabold text-2xl text-white">THE LIBRARY</h1>
             <p className="font-normal text-[14px] text-gray-400">Twelve lifts covering every major muscle group.</p>

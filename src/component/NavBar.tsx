@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import logo from '@/assets/logo.png'
-import React from 'react'
 import Image from 'next/image'
+import NavPlanButton from './button/NavPlanButton'
+import NavSavedButton from './button/NavSavedButton'
 
 const NavBar = () => {
+    
     return (
         <div className='bg-slate-900 text-white border-b border-slate-200'>
             <div className="container mx-auto navbar">
@@ -31,9 +33,9 @@ const NavBar = () => {
                         <li><Link href={'/my-plan'}>My Plan</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-4">
-                    <button className="btn">Plan</button>
-                    <button className="btn">Saved</button>
+                <div className="navbar-end flex gap-5">
+                    <NavPlanButton/>
+                   <NavSavedButton/>
                 </div>
             </div>
         </div>

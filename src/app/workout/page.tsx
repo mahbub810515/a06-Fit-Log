@@ -1,9 +1,14 @@
-import React from 'react'
+import Library from '@/component/library/Library'
+ 
 
-const WWorkoutPage = () => {
+const WorkoutPage = () => {
   return (
-    <div>WWorkoutPage</div>
+   <>
+   <div className='bg-slate-900'>
+   <Library/>
+   </div>
+   </>
   )
 }
 
-export default WWorkoutPage
+export default WorkoutPage

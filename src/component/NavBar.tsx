@@ -115,13 +115,10 @@ const NavBar = () => {
                     </div>
 
                     {/* Right Side */}
-                    <div className="navbar-end gap-1 sm:gap-2 md:gap-4">
-
+                    <Link href="/my-plan" className="navbar-end gap-1 sm:gap-2 md:gap-4">                      
                         <NavPlanButton />
-
-                        <NavSavedButton />
-
-                    </div>
+                        <NavSavedButton />                      
+                    </Link>
                 </div>
             </div>
         </div>

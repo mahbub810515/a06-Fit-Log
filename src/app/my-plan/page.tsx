@@ -213,8 +213,9 @@ const MyPlan = () => {
             </div>
 
             {/* Sort By Dropdown */}
-            <div className="ml-100 text-center">
-              <select defaultValue="Sort by" className="select" value={sortBy} onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}>
+            <div className="flex gap-2 items-center ml-100 text-center">
+              <label htmlFor="country-dropdown">SortBy:</label>             
+              <select  defaultValue="Sort by" className="select" value={sortBy} onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}>
                 <option disabled={true}>Sort by</option>
                 <option value="duration">Duration</option>
                 <option value="calories">Calories</option>
